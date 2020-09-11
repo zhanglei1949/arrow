@@ -48,7 +48,7 @@ public class BufferLedger implements ValueWithKeyIncluded<BaseAllocator>, Refere
         "BufferLedger[%d]", 1) : null;
   private volatile long lDestructionTime = 0;
 
-  BufferLedger(final BaseAllocator allocator, final AllocationManager allocationManager) {
+  public BufferLedger(final BaseAllocator allocator, final AllocationManager allocationManager) {
     this.allocator = allocator;
     this.allocationManager = allocationManager;
   }
@@ -84,7 +84,7 @@ public class BufferLedger implements ValueWithKeyIncluded<BaseAllocator>, Refere
    * underlying memory chunk. All ArrowBufs managed by this ledger
    * will share the ref count.
    */
-  void increment() {
+  public void increment() {
     bufRefCnt.incrementAndGet();
   }
 
